@@ -2,13 +2,17 @@
 
 This project gives clear information about how products are made, repaired, reused, and recycled.
 
-[Watch the product demo](docs/demo.webm)
+## Live demo
 
-## Business problem and users
+[Watch the recorded product demonstration](docs/demo.webm)
 
-This project gives clear information about how products are made, repaired, reused, and recycled. It is useful for manufacturers, shops, buyers, repair services, and people checking product information.
+This recording shows the real product running and demonstrates its main screens and actions.
 
-## Key workflows
+## Screenshots
+
+![Product Passport Elements product screenshot](docs/screenshot.png)
+
+## Main features
 
 - Search for products.
 - Check product and maker information.
@@ -17,45 +21,41 @@ This project gives clear information about how products are made, repaired, reus
 - Send information for review.
 - Track when a product passport is published.
 
-## Lit and Web Components highlights
+## Technology used
 
-The product is made from small, reusable Web Components. Each part keeps its own design and can also work inside React, Vue, Angular, or a normal web page. Automated checks cover the most important actions.
+- Lit and standard Web Components with TypeScript.
+- Vite for local development and production builds.
+- Java with Spring Boot for the backend.
+- Maven for Java builds.
+- Vitest and JUnit for automated checks.
 
-## Java backend highlights
+## Installation instructions
 
-The Java backend uses Spring Boot. It provides real API endpoints to list, search, and create passport task records. It checks incoming information, returns clear errors, exposes a health check, and includes automated Java tests.
+You need Node.js 20 or newer, Java 21 or newer, and Maven 3.9 or newer.
 
-## Architecture and state flow
-
-The browser application calls the Java API on port 8080. The Java service checks the request and keeps the shared product information. After a user creates a record, the API returns the saved result and the browser refreshes the list.
-
-## Accessibility and responsive behaviour
-
-Buttons, forms, and links can be used with a keyboard. Labels explain what each field does, and important information is shown with words, not only colours. The layout also adjusts for tablets and phones.
-
-## Run and verify
-
-These commands install the project, check it, and start it on a computer:
+Install the frontend packages:
 
 ```bash
 npm ci
+```
+
+Run all automated checks and production builds:
+
+```bash
 npm test
 npm run build
-npm run dev
 npm run backend:test
 npm run backend:build
+```
+
+Start the frontend and Java backend together:
+
+```bash
 npm run fullstack
 ```
 
-## Structure
+Open [http://localhost:5173](http://localhost:5173) for the product. The Java API runs at [http://localhost:8080](http://localhost:8080).
 
-- `backend/` — the Java API, validation, business rules, and tests.
-- `scripts/run-full-stack.mjs` — starts the frontend and backend together.
-- `src/` — the product pages, actions, and design.
-- `docs/demo.webm` — a short video showing the product.
-- `package.json` — the commands and packages needed to run it.
-- `README.md` — this simple product guide.
+## Commercial licensing/contact
 
-## Tradeoffs and roadmap
-
-This project uses sample information and does not connect to a real company system. A future version could connect to official product records, add signed evidence, public links, and review roles.
+No commercial license is granted automatically. For commercial licensing, integration work, consulting, or partnership enquiries, contact [Amitesh2022 through GitHub](https://github.com/Amitesh2022).
